@@ -1,0 +1,11 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArtworkVisual } from "../components/artwork-visual";
+import { PageShell, SectionIntro } from "../components/site-chrome";
+import { artworks } from "../data/exhibition";
+export const metadata:Metadata={title:"Timeline",description:"A chronological journey through eight represented centuries of Judith and Holofernes in art."};
+export default function TimelinePage(){return <PageShell className="timeline-page"><SectionIntro eyebrow="1275–2021" title="Timeline"><p>The line is chronological. The meanings are not. Watch actions disappear, return, and change political or erotic charge as the image moves through institutions, continents, and media.</p></SectionIntro><section className="timeline-key"><span>● Object</span><span>◆ Context</span></section><section className="timeline-stream">
+  <article className="context-event"><time>c. 100 BCE</time><div><h2>The Book of Judith takes form</h2><p>Most scholarship locates composition in the late Hellenistic period, though date and original language remain debated.</p></div></article>
+  {[...artworks].sort((a,b)=>a.dateStart-b.dateStart).map(w=><article className="timeline-object" key={w.slug}><time>{w.dateDisplay}</time><Link href={`/artworks/${w.slug}`}><ArtworkVisual work={w}/></Link><div><p className="eyebrow">{w.movement} · {w.region}</p><h2><Link href={`/artworks/${w.slug}`}>{w.title}</Link></h2><h3>{w.artist}</h3><p>{w.shortLabel}</p><span>{w.scene}</span></div>{w.slug==="botticelli-discovery-holofernes"&&<aside><b>1495</b> Florence installs Donatello's bronze before the Palazzo Vecchio after Piero de’ Medici’s expulsion, recasting a Medici object as a republican emblem.</aside>}{w.slug==="caravaggio-judith"&&<aside><b>c. 1600</b> Caravaggism makes darkness, naturalism, and staged bodily action a trans-European visual problem.</aside>}</article>)}
+  <article className="context-event"><time>1970s–present</time><div><h2>Feminist recovery changes the canon</h2><p>Scholarship, exhibitions, and conservation restore Artemisia Gentileschi's authorship and importance, while debate continues over biography and interpretation.</p></div></article>
+  </section></PageShell>}
