@@ -21,12 +21,12 @@
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
      inkscape:zoom="13.984375"
-     inkscape:cx="32"
+     inkscape:cx="32.035754"
      inkscape:cy="32"
      inkscape:window-width="1920"
-     inkscape:window-height="1080"
+     inkscape:window-height="1022"
      inkscape:window-x="1470"
-     inkscape:window-y="0"
+     inkscape:window-y="30"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2" />
   <rect
@@ -41,5 +41,6 @@
      height="52"
      fill="none"
      stroke="#b79a5e"
-     id="rect2" />
+     id="rect2"
+     style="stroke-width:3;stroke-dasharray:none" />
 </svg>
