@@ -19,7 +19,7 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
 export function Footer() {
   return <footer className="site-footer">
     <div className="footer-identity">
-      <span className="footer-identity-badge"><img src="https://jameshoward.us/assets/img/identity/jh-badge-1x1.svg" alt="James Howard identity badge" /></span>
+      <span className="footer-identity-badge"><img src="/jh-badge-1x1.svg" alt="James Howard identity badge" /></span>
       <div><p className="footer-domain">judith.jameshoward.us</p><p className="footer-byline">A website of <a href="https://jameshoward.us">James Howard</a></p></div>
     </div>
     <div className="footer-links">
