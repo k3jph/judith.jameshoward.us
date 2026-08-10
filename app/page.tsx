@@ -34,7 +34,7 @@ export default function Home() {
     </section>
 
     <section className="story-portal section-pad"><div className="story-image-wrap"><img src={artworkImage("botticelli-return-bethulia")} alt="Botticelli's Judith strides home with a sword while her maid carries the head." loading="lazy" /><span className="image-note">Botticelli, c. 1470<br />The return to Bethulia</span></div>
-      <div className="story-copy"><p className="eyebrow">Before the paintings</p><blockquote>“The Lord will visit Israel<br />by my hand.”</blockquote><p>Judith is introduced not as a seductress but as a respected, independent widow who corrects the city's leaders, designs a military deception, and refuses to disclose it. The head comes later.</p>
+      <div className="story-copy"><p className="eyebrow">Before the paintings</p><blockquote>“The Lord will visit Israel by my hand.”</blockquote><p>Judith is introduced not as a seductress but as a respected, independent widow who corrects the city's leaders, designs a military deception, and refuses to disclose it. The head comes later.</p>
       <div className="story-links"><Link href="/story"><span>I</span><b>The story in seven movements</b><i>→</i></Link><Link href="/read?chapter=13"><span>II</span><b>Read the Book of Judith</b><i>→</i></Link><Link href="/interpretation"><span>III</span><b>Judith through time</b><i>→</i></Link></div></div>
     </section>
 
