@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 const developmentPreviewMeta =
@@ -38,6 +39,10 @@ test("renders production metadata without a development placeholder", async () =
   assert.match(html, /href="https:\/\/jameshoward\.us"[^>]*>James Howard<\/a>/);
   assert.match(html, /jh-badge-1x1\.svg/);
   assert.doesNotMatch(html, /Curated by James P\. Howard, II/);
+  assert.match(html, /id="gdpr-cookie"/);
+  assert.match(html, /Google Analytics will not load unless you accept/);
+  assert.match(html, /data-cookie-preferences/);
+  assert.match(html, /href="\/privacy"/);
 });
 
 async function render(path) {
@@ -185,4 +190,29 @@ test("shows an open research agenda rather than an inflated audit count", async 
   assert.match(html, /What the current sweep/);
   assert.match(html, /Medieval object worlds/);
   assert.doesNotMatch(html, />854</);
+});
+
+test("renders the privacy notice and consent controls", async () => {
+  const response = await render("/privacy");
+  const html = await response.text();
+  assert.equal(response.status, 200);
+  assert.match(html, /Privacy &amp; Cookie Notice/);
+  assert.match(html, /cookieConsent/);
+  assert.match(html, /Global Privacy Control/);
+  assert.match(html, /Google Analytics will not load, contact Google, or set analytics cookies unless/);
+  assert.match(html, /Last updated: August 11, 2026/);
+});
+
+test("gates the configured Analytics property behind affirmative consent", () => {
+  const component = readFileSync(new URL("../app/components/cookie-consent.tsx", import.meta.url), "utf8");
+  const manager = readFileSync(new URL("../public/gdpr-cookie.js", import.meta.url), "utf8");
+  assert.match(component, /G-TBZHGJKPHW/);
+  assert.match(component, /cookieConsent/);
+  assert.match(component, /365/);
+  assert.match(manager, /globalPrivacyControl/);
+  assert.match(manager, /analytics_storage: "granted"/);
+  assert.match(manager, /ad_storage: "denied"/);
+  assert.match(manager, /allow_google_signals: false/);
+  assert.match(manager, /deleteAnalyticsCookies/);
+  assert.match(manager, /googletagmanager\.com\/gtag\/js\?id=/);
 });

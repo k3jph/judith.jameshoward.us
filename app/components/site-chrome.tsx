@@ -23,7 +23,7 @@ export function Footer() {
       <div><p className="footer-domain">judith.jameshoward.us</p><p className="footer-byline">A website of <a href="https://jameshoward.us">James Howard</a></p></div>
     </div>
     <div className="footer-links">
-      <Link href="/map">Made here / held here</Link><Link href="/research">Object-first research sweep</Link><Link href="/about">About &amp; methodology</Link><Link href="/sources">Bibliography &amp; sources</Link><Link href="/rights">Image rights &amp; credits</Link>
+      <Link href="/map">Made here / held here</Link><Link href="/research">Object-first research sweep</Link><Link href="/about">About &amp; methodology</Link><Link href="/sources">Bibliography &amp; sources</Link><Link href="/rights">Image rights &amp; credits</Link><Link href="/privacy">Privacy &amp; cookies</Link><button type="button" data-cookie-preferences>Cookie settings</button>
     </div>
   </footer>;
 }
