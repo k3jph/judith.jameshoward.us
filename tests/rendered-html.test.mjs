@@ -92,7 +92,7 @@ test("renders the corrected story and chronological context", async () => {
 
   const timeline = await (await render("/timeline")).text();
   assert.match(timeline, />1495</);
-  assert.match(timeline, /1275–2021/);
+  assert.match(timeline, /1230–2021/);
   assert.doesNotMatch(timeline, />1494</);
 });
 
@@ -113,7 +113,7 @@ test("renders both zoomable geography modes", async () => {
   assert.match(html, /Held here/);
   assert.match(html, /Map zoom controls/);
   assert.match(html, /Untitled #228/);
-  assert.match(html, /omitted from Made/);
+  assert.match(html, /is omitted because its record does not identify a workshop city/);
 });
 
 test("orders the century filter chronologically", async () => {
@@ -132,6 +132,8 @@ test("renders the personal curatorial statement and AI disclosure", async () => 
   assert.match(html, /James P\. Howard, II/);
   assert.match(html, /AI-assisted exhibition/);
   assert.match(html, /Revision history/);
+  assert.match(html, /Revision 04/);
+  assert.match(html, /12 August 2026/);
   assert.match(html, /9 August 2026/);
   assert.match(html, /Ca’ Pesaro dimensions/);
   assert.match(html, /Corrections &amp; contact/);
@@ -157,16 +159,26 @@ test("uses exact records and de-duplicates object evidence", async () => {
   const giorgione = await (await render("/artworks/giorgione-judith")).text();
   assert.match(giorgione, /some catalogues give 66\.5 cm wide/);
   assert.match(giorgione, /NGA catalogue note connecting the Raphael Judith/);
+  assert.match(giorgione, /nga\.gov\/artworks\/1181-judith-head-holofernes/);
   assert.doesNotMatch(giorgione, /Hermitage collection record/);
+
+  const mantegna = await (await render("/artworks/mantegna-follower-judith")).text();
+  assert.match(mantegna, /Andrea Mantegna or follower \(possibly Giulio Campagnola\)/);
+  assert.match(mantegna, /1942\.9\.42/);
+
+  const botticelli = await (await render("/artworks/botticelli-return-bethulia")).text();
+  assert.match(botticelli, /Tempera on wood/);
 
   const klimt = await (await render("/artworks/klimt-judith-ii")).text();
   assert.match(klimt, /176 × 46 cm/);
   assert.match(klimt, /visitmuve\.it\/capolavoro\/gustav-klimt-giuditta-ii-salome/);
 
   const caravaggio = await (await render("/artworks/caravaggio-judith")).text();
-  assert.match(caravaggio, /Palazzo Barberini collection and exhibition history/);
-  assert.match(caravaggio, /Official Kimbell loan record/);
+  assert.match(caravaggio, /Palazzo Barberini collection index/);
+  assert.match(caravaggio, /Palazzo Barberini exhibition history and collection context/);
+  assert.match(caravaggio, /Kimbell 2025–26 loan record/);
   assert.doesNotMatch(caravaggio, /caravaggio-eccehomo\.com/);
+  assert.doesNotMatch(caravaggio, /gebart\.it/);
 
   const sources = await (await render("/sources")).text();
   assert.match(sources, /explicitly labelled surrogate/);
@@ -178,6 +190,11 @@ test("uses exact records and de-duplicates object evidence", async () => {
 test("adds media-specific interpretation and its evidence", async () => {
   const html = await (await render("/interpretation")).text();
   assert.match(html, /A print is not merely a smaller painting/);
+  assert.match(html, /Barthel Beham/);
+  assert.match(html, /Coornhert after Heemskerck/);
+  assert.match(html, /Goltzius after Spranger/);
+  assert.match(html, /Galle after Rubens/);
+  assert.match(html, /Virgin overcoming the Devil/);
   assert.match(html, /Counter-Reformation/);
   assert.match(html, /JUDITH UND HOLOFERNES/);
   assert.match(html, /10\.11647\/obp\.0009\.19/);
@@ -189,7 +206,62 @@ test("shows an open research agenda rather than an inflated audit count", async 
   assert.equal(response.status, 200);
   assert.match(html, /What the current sweep/);
   assert.match(html, /Medieval object worlds/);
+  assert.match(html, /Sixty-four objects/);
+  assert.match(html, /Six prints now establish/);
   assert.doesNotMatch(html, />854</);
+});
+
+test("expands the medieval and reproductive-print evidence", async () => {
+  const gallery = await (await render("/gallery")).text();
+  for (const slug of [
+    "cleveland-leber-initial",
+    "fitzwilliam-speculum-judith",
+    "beham-judith",
+    "coornhert-judith",
+    "goltzius-judith",
+    "galle-rubens-judith",
+  ]) assert.match(gallery, new RegExp(slug));
+
+  const speculum = await (await render("/artworks/fitzwilliam-speculum-judith")).text();
+  assert.match(speculum, /Virgin Overcomes the Devil/);
+  assert.match(speculum, /MS 43-1950, fol\. 14v/);
+  assert.match(speculum, /CC BY-NC-ND 4\.0/);
+  assert.match(speculum, /does not reproduce that no-derivatives file/);
+
+  const rights = await (await render("/rights")).text();
+  assert.match(rights, /48<\/b><span>displayed images/);
+  assert.match(rights, /16<\/b><span>text-only records/);
+  assert.match(rights, /64<\/b><span>works still counted/);
+});
+
+test("puts reuse terms and cited scholarship on relevant object pages", async () => {
+  for (const slug of ["donatello-judith", "allori-judith"]) {
+    const html = await (await render(`/artworks/${slug}`)).text();
+    assert.match(html, /Image reuse:[\s\S]{0,100}CC BY-SA 4\.0/);
+    assert.match(html, /creativecommons\.org\/licenses\/by-sa\/4\.0/);
+  }
+
+  const cranach = await (await render("/artworks/cranach-met-judith")).text();
+  assert.match(cranach, /Koepplin and Falk catalogue/);
+  const klimt = await (await render("/artworks/klimt-judith-i")).text();
+  assert.match(klimt, /Natter, Gustav Klimt/);
+  assert.match(klimt, /Mieke Bal on Judith/);
+  const wiley = await (await render("/artworks/kehinde-wiley-judith")).text();
+  assert.match(wiley, /Eugenie Tsai/);
+
+  const sources = await (await render("/sources")).text();
+  assert.match(sources, /Jenkins, Catherine, Nadine M\. Orenstein, and Freyda Spira/);
+  assert.doesNotMatch(sources, /Donald J\. LaRocca/);
+  assert.match(sources, /263–281/);
+});
+
+test("serves a canonical text sitemap", async () => {
+  const response = await render("/sitemap.xml");
+  const xml = await response.text();
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("content-type") ?? "", /xml/i);
+  assert.match(xml, /https:\/\/judith\.jameshoward\.us\/artworks\/galle-rubens-judith/);
+  assert.doesNotMatch(xml, /chatgpt\.site/);
 });
 
 test("renders the privacy notice and consent controls", async () => {

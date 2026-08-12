@@ -8,14 +8,19 @@ export type MapPlacement = {
 };
 
 export const madePlacements: MapPlacement[] = [
+  { slug: "cleveland-leber-initial", label: "Paris", lat: 48.8566, lon: 2.3522, certainty: "documented" },
   { slug: "cleveland-bible-initial", label: "Toulouse region", lat: 43.6045, lon: 1.444, certainty: "regional", note: "Southern France, possibly Toulouse" },
   { slug: "donatello-judith", label: "Florence", lat: 43.7696, lon: 11.2558, certainty: "documented" },
   { slug: "botticelli-return-bethulia", label: "Florence", lat: 43.7696, lon: 11.2558, certainty: "documented" },
   { slug: "mantegna-follower-judith", label: "Mantua region", lat: 45.1564, lon: 10.7914, certainty: "regional", note: "Attribution and workshop location remain under study" },
   { slug: "mocetto-judith", label: "Venice", lat: 45.4408, lon: 12.3155, certainty: "documented" },
+  { slug: "beham-judith", label: "Nuremberg", lat: 49.4521, lon: 11.0767, certainty: "regional", note: "Placed through Barthel Beham's Nuremberg practice" },
   { slug: "cranach-met-judith", label: "Wittenberg", lat: 51.866, lon: 12.65, certainty: "documented" },
+  { slug: "coornhert-judith", label: "Haarlem", lat: 52.3874, lon: 4.6462, certainty: "regional", note: "Placed through Coornhert and Heemskerck's Haarlem print network" },
   { slug: "veronese-judith", label: "Venice", lat: 45.4408, lon: 12.3155, certainty: "documented" },
+  { slug: "goltzius-judith", label: "Haarlem", lat: 52.3874, lon: 4.6462, certainty: "regional", note: "Engraved in Haarlem after Spranger's Prague design" },
   { slug: "caravaggio-judith", label: "Rome / Vatican City", lat: 41.9028, lon: 12.4964, certainty: "documented" },
+  { slug: "galle-rubens-judith", label: "Antwerp", lat: 51.2194, lon: 4.4025, certainty: "regional", note: "Placed through Galle and Rubens's Antwerp print network" },
   { slug: "allori-judith", label: "Florence", lat: 43.7696, lon: 11.2558, certainty: "documented" },
   { slug: "artemisia-naples", label: "Rome / Vatican City", lat: 41.9028, lon: 12.4964, certainty: "regional", note: "Generally associated with Artemisia’s Roman period" },
   { slug: "antiveduto-judith", label: "Rome / Vatican City", lat: 41.9028, lon: 12.4964, certainty: "documented" },
@@ -68,14 +73,20 @@ export const madePlacements: MapPlacement[] = [
 ];
 
 export const heldPlacements: MapPlacement[] = [
+  { slug: "cleveland-leber-initial", label: "Cleveland", lat: 41.5089, lon: -81.6116 },
   { slug: "cleveland-bible-initial", label: "Cleveland", lat: 41.5089, lon: -81.6116 },
+  { slug: "fitzwilliam-speculum-judith", label: "Cambridge", lat: 52.2043, lon: 0.1149 },
   { slug: "donatello-judith", label: "Florence", lat: 43.7693, lon: 11.256 },
   { slug: "botticelli-return-bethulia", label: "Florence", lat: 43.7687, lon: 11.255 },
   { slug: "mantegna-follower-judith", label: "Washington, DC", lat: 38.8913, lon: -77.0199 },
   { slug: "mocetto-judith", label: "Washington, DC", lat: 38.8913, lon: -77.0199 },
+  { slug: "beham-judith", label: "Washington, DC", lat: 38.8913, lon: -77.0199 },
   { slug: "cranach-met-judith", label: "New York", lat: 40.7794, lon: -73.9632 },
+  { slug: "coornhert-judith", label: "New York", lat: 40.7794, lon: -73.9632 },
   { slug: "veronese-judith", label: "Vienna", lat: 48.2038, lon: 16.3618 },
+  { slug: "goltzius-judith", label: "Washington, DC", lat: 38.8913, lon: -77.0199 },
   { slug: "caravaggio-judith", label: "Rome / Vatican City", lat: 41.9031, lon: 12.4902 },
+  { slug: "galle-rubens-judith", label: "Washington, DC", lat: 38.8913, lon: -77.0199 },
   { slug: "allori-judith", label: "Florence", lat: 43.7652, lon: 11.25 },
   { slug: "artemisia-naples", label: "Naples", lat: 40.8674, lon: 14.2506 },
   { slug: "antiveduto-judith", label: "Stockholm", lat: 59.328, lon: 18.078 },

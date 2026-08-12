@@ -1,13 +1,13 @@
 export const researchMetrics = [
-  { value: "58", label: "works now interpreted in the gallery" },
+  { value: "64", label: "works now interpreted in the gallery" },
   { value: "17", label: "Made-map placements outside Europe" },
-  { value: "15", label: "intentional text-only records" },
+  { value: "16", label: "intentional text-only records" },
   { value: "Ongoing", label: "cross-collection discovery sweep" },
 ] as const;
 
 export const researchGaps = [
-  ["Medieval object worlds", "The current gallery still underrepresents sculpture, stained glass, Speculum Humanae Salvationis and Biblia Pauperum cycles, and Judith imagery embedded in liturgical or architectural settings."],
-  ["Print networks", "Engravings and woodcuts by Hans Sebald Beham, Georg Pencz, Heinrich Aldegrever, Jacques Callot, and Dutch printmakers require a dedicated copy-and-variation study rather than isolated additions."],
+  ["Medieval object worlds", "Three pre-1400 objects now establish biblical illumination and a Speculum typological pairing, but sculpture, stained glass, Biblia Pauperum cycles, and Judith imagery embedded in liturgical or architectural settings remain underrepresented."],
+  ["Print networks", "Six prints now establish Italian, German, Netherlandish, Mannerist, and Baroque routes of transmission. Woodcuts and further engravings by Hans Sebald Beham, Georg Pencz, Heinrich Aldegrever, Jacques Callot, and other Dutch printmakers still require a dedicated copy-and-variation study."],
   ["Literary reception", "Old English Judith and Friedrich Hebbel now appear in the interpretation, but the exhibition has not yet mapped how literary retellings changed visual choices across languages."],
   ["Counter-Reformation settings", "Naples, Rome, and Catholic court cultures need closer comparison across sermons, devotion, theatrical painting, and the politics of female exemplarity."],
   ["Jewish ritual and manuscript traditions", "The Yeshiva Hanukkah lamp is now present, but one object cannot stand for the wider history of Judith in Jewish ceremonial art, manuscripts, performance, and regional Hanukkah traditions."],

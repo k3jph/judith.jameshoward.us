@@ -11,7 +11,7 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   metadataBase: new URL("https://judith.jameshoward.us"),
   title: { default: "Judith & Holofernes — The Fatal Image", template: "%s | The Fatal Image" },
-  description: "A virtual exhibition tracing Judith and Holofernes across eight represented centuries of visual art.",
+  description: "A virtual exhibition tracing Judith and Holofernes across nine represented centuries of visual art.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

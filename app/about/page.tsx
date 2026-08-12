@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const methods = [
-  ["Scope", "The fifty-eight-work gallery spans manuscript, tapestry, fresco, sculpture, decorative and ceremonial art, painting, drawing, print, photography, caricature, and abstraction. Works earn a place through what they change in the object tradition, never through institutional fame alone."],
+  ["Scope", "The sixty-four-work gallery spans manuscript, tapestry, fresco, sculpture, decorative and ceremonial art, painting, drawing, print, photography, caricature, and abstraction. Works earn a place through what they change in the object tradition, never through institutional fame alone."],
   ["Dates", "A date displayed with “c.” is approximate. Ranges and disputed dating are retained. The chronological interface sorts by an internal start date solely for navigation; it does not imply false precision."],
   ["Attribution", "Institutional language governs. “Follower,” “circle of,” “after,” and possible authors are not silently promoted. A disputed attribution is part of the object's history and often part of what the work can teach."],
   ["Discovery", "Cross-collection indexes, national catalogues, regional museums, churches, libraries, artist records, private collections, and specialist collections form the discovery layer. Aggregator records are leads that must be checked, not votes for importance."],
@@ -19,6 +19,12 @@ const methods = [
 ] as const;
 
 const revisions = [
+  {
+    label: "Revision 04",
+    date: "12 August 2026",
+    title: "Medieval typology and print networks",
+    text: "Expanded the gallery from 58 to 64 works with a Paris Bible leaf, a Fitzwilliam Speculum pairing, and engravings by Barthel Beham, Coornhert after Heemskerck, Goltzius after Spranger, and Galle after Rubens. Corrected the Botticelli support and Mantegna accession, repaired bibliography details, exposed object-level reuse links, and connected cited scholarship to the works it interprets.",
+  },
   {
     label: "Revision 03",
     date: "9 August 2026",

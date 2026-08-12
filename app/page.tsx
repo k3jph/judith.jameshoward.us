@@ -14,14 +14,14 @@ export default function Home() {
       <div className="hero-vignette" /><div className="hero-content">
         <p className="hero-overline"><span /> A virtual exhibition <span /></p>
         <h1><span>Judith</span><i>&amp;</i><span>Holofernes</span></h1><p className="hero-subtitle">The Fatal Image</p>
-        <p className="hero-deck">A widow enters an enemy camp. A general loses his head.<br />Artists across eight represented centuries decide what it means.</p>
+        <p className="hero-deck">A widow enters an enemy camp. A general loses his head.<br />Artists across nine represented centuries decide what it means.</p>
         <div className="hero-actions"><Link className="button button--primary" href="/gallery">Enter the exhibition <span>→</span></Link><Link className="button button--ghost" href="/story">Read the story</Link></div>
       </div>
       <div className="hero-caption"><span>On view</span> Caravaggio, <i>Judith Beheading Holofernes</i>, c. 1599–1600</div><a className="scroll-cue" href="#threshold"><span>Begin</span><i /></a>
     </section>
 
     <section id="threshold" className="threshold section-pad">
-      <div className="threshold-number">750+</div><div className="threshold-copy"><p className="eyebrow">The enduring subject</p><h2>Years of beauty,<br />violence, and argument</h2>
+      <div className="threshold-number">795+</div><div className="threshold-copy"><p className="eyebrow">The enduring subject</p><h2>Years of beauty,<br />violence, and argument</h2>
       <p>Judith never stays still. She is biblical deliverer, civic liberator, virtuous widow, political assassin, beautiful danger, and feminist problem. The paintings do not illustrate one agreed meaning. They stage the fight over it.</p>
       <Link className="text-link" href="/why-judith">Why artists returned to Judith <span>→</span></Link></div>
       <dl className="threshold-stats"><div><dt>{artworks.length}</dt><dd>studied works</dd></div><div><dt>{representedCenturies}</dt><dd>represented centuries</dd></div><div><dt>{narrativeMoments}</dt><dd>narrative moments</dd></div><div><dt>2</dt><dd>complete translations</dd></div></dl>

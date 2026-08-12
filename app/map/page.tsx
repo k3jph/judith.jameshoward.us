@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function MapPage() {
   return <PageShell className="map-page">
     <SectionIntro eyebrow="Two object geographies" title="Made Here / Held Here">
-      <p>Creation and custody tell different stories. Select a place to see the works gathered there, then switch maps to watch artistic centres become collecting centres. Fifty-seven of fifty-eight works have a documented or explicitly cautious creation placement; Cindy Sherman’s <i>Untitled #228</i> is omitted from Made because only the series—not that object—is tied to Rome.</p>
+      <p>Creation and custody tell different stories. Select a place to see the works gathered there, then switch maps to watch artistic centres become collecting centres. Sixty-two of sixty-four works have a documented or explicitly cautious creation placement; the Fitzwilliam Speculum is omitted because its record does not identify a workshop city, and Cindy Sherman’s <i>Untitled #228</i> because MoMA ties Rome only to the series, not that object.</p>
     </SectionIntro>
     <MapClient />
   </PageShell>;
