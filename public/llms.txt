@@ -1,0 +1,33 @@
+# Judith & Holofernes: The Fatal Image
+
+> A virtual exhibition tracing Judith and Holofernes across eight represented centuries of visual art, with artworks, artists, interpretation, timelines, maps, tours, research notes, and source documentation.
+
+Website: https://judith.jameshoward.us/
+Creator: James P. Howard, II
+
+## Main exhibition
+
+- [Story](https://judith.jameshoward.us/story/): narrative path through the subject and its visual history.
+- [Gallery](https://judith.jameshoward.us/gallery/): browse the represented works.
+- [Artworks](https://judith.jameshoward.us/artworks/): individual artwork records.
+- [Artists](https://judith.jameshoward.us/artists/): artist records and context.
+- [Tours](https://judith.jameshoward.us/tours/): curated thematic paths through the exhibition.
+- [Timeline](https://judith.jameshoward.us/timeline/): chronological view of the represented works.
+- [Map](https://judith.jameshoward.us/map/): geographic view of artists, works, and collections.
+- [Why Judith?](https://judith.jameshoward.us/why-judith/): orientation to the subject and its persistence.
+
+## Research and interpretation
+
+- [Interpretation](https://judith.jameshoward.us/interpretation/): thematic and comparative analysis.
+- [Research](https://judith.jameshoward.us/research/): research notes and supporting material.
+- [Sources](https://judith.jameshoward.us/sources/): documentary and scholarly sources.
+- [Rights](https://judith.jameshoward.us/rights/): image, text, and reuse information.
+- [About](https://judith.jameshoward.us/about/): exhibition scope and methodology.
+
+## Rights note
+
+Many artworks are held by third parties or reproduced from external collections. Do not infer that the site's presentation of an image transfers or broadens rights in the underlying work or photograph.
+
+## Related
+
+- [James Howard](https://jameshoward.us/): creator profile and related projects.
